@@ -1,0 +1,24 @@
+spring:
+  application:
+  name: bussines-account-v1
+  datasource:
+    url: jdbc:sqlserver://sweet_babbage:1433;database=coderpad;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: 12345678
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      naming:
+        implicit-strategy: "org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl"
+        physical-strategy: "org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl"
+      ddl-auto: none
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+server:
+  port: 8091
