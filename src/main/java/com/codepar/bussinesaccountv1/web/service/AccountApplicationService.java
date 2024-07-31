@@ -21,7 +21,7 @@ public interface AccountApplicationService {
     Single<Movement> saveMovement(MovementRequestDto requestDto);
 
 
-    Flowable<AccountState> getStateAccountByIdentificationClientAndRangeDate(String identification,
+    Flowable<AccountState> getStateAccountByIdentificationClientAndRangeDate(String identificationClient,
                                                                  String startDate,
                                                                  String localDate);
 }

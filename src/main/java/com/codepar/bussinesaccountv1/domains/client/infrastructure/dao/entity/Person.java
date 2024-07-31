@@ -10,8 +10,6 @@ public abstract class Person {
 
     @Column(name = "NAME")
     protected String name;
-    @Column(name = "GENDER")
-    protected String gender;
     @Column(name = "IDENTIFICATION")
     protected String identification;
     @Column(name = "ADDRESS")

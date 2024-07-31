@@ -10,6 +10,7 @@ import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.core.Maybe;
 import io.reactivex.rxjava3.core.Single;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.net.URI;
@@ -47,7 +48,7 @@ public class AccountController {
                 .andThen(Completable.fromAction(
                         () -> ResponseEntity.noContent().build()));
     }
-    @GetMapping(value = "/state")
+    @GetMapping(value = "/state",produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
     public Maybe<ResponseEntity<Flowable<AccountState>>> getStateAccounts(@RequestParam String identificationClient,
                                                                          @RequestParam String startDate,
                                                                          @RequestParam String endDate) {
